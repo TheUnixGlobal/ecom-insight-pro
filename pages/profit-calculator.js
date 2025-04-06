@@ -48,59 +48,63 @@ export default function ProfitCalculator() {
   };
 
   return (
-    <div className="p-8 max-w-2xl mx-auto">
-      <h1 className="text-4xl font-bold mb-6 text-center">Strategic Profit Calculator</h1>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-8">
+      <div className="bg-white p-10 rounded-2xl shadow-2xl max-w-2xl w-full">
+        <h1 className="text-4xl font-bold text-center mb-8 text-blue-600">Strategic Profit Calculator</h1>
 
-      <div className="grid grid-cols-1 gap-4">
-        <input
-          className="p-2 border rounded"
-          type="number"
-          placeholder="Selling Price ($)"
-          value={sellingPrice}
-          onChange={(e) => setSellingPrice(e.target.value)}
-        />
-        <input
-          className="p-2 border rounded"
-          type="number"
-          placeholder="Product Cost ($)"
-          value={productCost}
-          onChange={(e) => setProductCost(e.target.value)}
-        />
-        <input
-          className="p-2 border rounded"
-          type="number"
-          placeholder="Shipping Cost ($)"
-          value={shippingCost}
-          onChange={(e) => setShippingCost(e.target.value)}
-        />
-        <input
-          className="p-2 border rounded"
-          type="number"
-          placeholder="FBA Fees ($)"
-          value={fbaFees}
-          onChange={(e) => setFbaFees(e.target.value)}
-        />
-        <input
-          className="p-2 border rounded"
-          type="number"
-          placeholder="Ads Cost ($)"
-          value={adsCost}
-          onChange={(e) => setAdsCost(e.target.value)}
-        />
+        <div className="grid grid-cols-1 gap-4 mb-6">
+          <input
+            className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            type="number"
+            placeholder="Selling Price ($)"
+            value={sellingPrice}
+            onChange={(e) => setSellingPrice(e.target.value)}
+          />
+          <input
+            className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            type="number"
+            placeholder="Product Cost ($)"
+            value={productCost}
+            onChange={(e) => setProductCost(e.target.value)}
+          />
+          <input
+            className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            type="number"
+            placeholder="Shipping Cost ($)"
+            value={shippingCost}
+            onChange={(e) => setShippingCost(e.target.value)}
+          />
+          <input
+            className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            type="number"
+            placeholder="FBA Fees ($)"
+            value={fbaFees}
+            onChange={(e) => setFbaFees(e.target.value)}
+          />
+          <input
+            className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            type="number"
+            placeholder="Ads Cost ($)"
+            value={adsCost}
+            onChange={(e) => setAdsCost(e.target.value)}
+          />
+        </div>
 
-        <button
-          onClick={clearFields}
-          className="bg-red-500 text-white py-2 rounded hover:bg-red-600 mt-4"
-        >
-          Clear All
-        </button>
+        <div className="flex justify-center gap-4">
+          <button
+            onClick={clearFields}
+            className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-6 rounded-lg transition-all"
+          >
+            Clear All
+          </button>
+        </div>
 
-        <div className="mt-6 bg-green-100 p-4 rounded">
-          <h2 className="text-2xl font-semibold mb-4">Results:</h2>
-          <p>Profit: <strong>${profit}</strong></p>
-          <p>ROI: <strong>{roi}%</strong></p>
-          <p>Net Margin: <strong>{netMargin}%</strong></p>
-          <p>Break-Even Selling Price: <strong>${breakEvenPrice}</strong></p>
+        <div className="mt-8 bg-green-50 p-6 rounded-2xl shadow-inner">
+          <h2 className="text-2xl font-semibold mb-4 text-green-700">Results:</h2>
+          <p className="text-lg mb-2">Profit: <strong>${profit}</strong></p>
+          <p className="text-lg mb-2">ROI: <strong>{roi}%</strong></p>
+          <p className="text-lg mb-2">Net Margin: <strong>{netMargin}%</strong></p>
+          <p className="text-lg">Break-Even Selling Price: <strong>${breakEvenPrice}</strong></p>
         </div>
       </div>
     </div>
